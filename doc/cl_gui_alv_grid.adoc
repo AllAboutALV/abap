@@ -1,0 +1,1505 @@
+= CL_GUI_ALV_GRID
+ 
+Output of Test Report ZAAA_TEST_ADOC_FOR_CLAS 
+ 
+== _GET_MASKING Masking, internal use only 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|VALUE |TYPE STRING |Internal Use, Path Name
+|ACTIVE |TYPE CHAR3 |Masking
+|========
+
+
+== _GET_PATH Internal usage 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IR_CONTAINER |TYPE REF TO CL_GUI_CONTAINER |Abstract Container for GUI Controls
+|VALUE |TYPE STRING |
+|========
+
+
+== _GET_COL_POS Internal usage 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ET_COL_POS |TYPE LVC_T_COLL |ALV control: Column layout of table
+|========
+
+
+== _GET_SRAL Internal use only 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ER_SRAL |TYPE REF TO IF_SRAL_RT_CTRL_ALVGRID_DYNP |Current View
+|========
+
+
+== CELL_DISPLAY Output Cell 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IS_DATA |TYPE ANY |Data Row
+|I_INT_VALUE |TYPE ANY |Date in Internal Format
+|E_EXT_VALUE |TYPE ANY |Date in External Format
+|CS_FIELDCAT |TYPE LVC_S_FCAT |Field Catalog Entry
+|========
+
+
+== OFFLINE Batch or Web Reporting 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|E_OFFLINE |TYPE INT4 |Offline
+|========
+
+
+== TRANSFER_FCODE_LVC_TO_SLIS Convert Function Codes from LVC to SLIS 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IT_FCODES_LVC |TYPE UI_FUNCTIONS |Function Code Table LVC
+|I_FCODE_LVC |TYPE SY-UCOMM |Function Code Table
+|ET_FCODES_SLIS |TYPE SLIS_T_EXTAB |Function Code Table SLIS
+|E_FCODE_SLIS |TYPE SY-UCOMM |Menu Painter: Object code
+|========
+
+
+== TRANSFER_FCODE_SLIS_TO_LVC Convert Function Codes from SLIS to LVC 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IT_FCODES_SLIS |TYPE SLIS_T_EXTAB |Function Code Table SLIS
+|I_FCODE_SLIS |TYPE SY-UCOMM |Menu Painter: Object code
+|ET_FCODES_LVC |TYPE UI_FUNCTIONS |Function Code Table LVC
+|E_FCODE_LVC |TYPE SY-UCOMM |Function Code
+|========
+
+
+== _GET_TEXTS  
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|VALUE |TYPE IF_ALV_Z=>YT_TEXTS |
+|========
+
+
+== ACTIVATE_DISPLAY_PROTOCOL Output Log in Dialog 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|I_DIALOG |TYPE CHAR01 |Log Output in Dialog
+|========
+
+
+== ACTIVATE_REPREP_INTERFACE Enable Report/Report Interface 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IS_REPREP |TYPE LVC_S_RPRP |Sender Information
+|========
+
+
+== APPEND_ROWS Append Rows at End 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|I_ROW_COUNT |TYPE INT4 |Number of Lines
+|========
+
+
+== CHANGE_DATA_FROM_INSIDE for internal use only! 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IT_STYLE_CELLS |TYPE LVC_T_MODI |ALV control: Modified cells
+|IT_CELLS |TYPE LVC_T_POS |ALV Control: Cell Description
+|ET_BAD_CELLS |TYPE LVC_T_MODI |ALV Control: Table of Modified Cells for the Application
+|ET_MSG |TYPE LVC_T_MSG1 |ALV Control: Messages
+|========
+
+
+== CHECK_CHANGED_DATA Verification of Changes and Triggering of Event DATA_CHANGED 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|E_VALID |TYPE CHAR01 |Entries are Consistent
+|C_REFRESH |TYPE CHAR01 |Character Field of Length 1
+|========
+
+
+== CONSTRUCTOR Generates and Links ALV Control 
+
+(Public Constructor) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|I_SHELLSTYLE |TYPE I |Control Style
+|I_LIFETIME |TYPE I |Lifetime
+|I_PARENT |TYPE REF TO CL_GUI_CONTAINER |Parent Container
+|I_APPL_EVENTS |TYPE CHAR01 |Register Events as Application Events
+|I_PARENTDBG |TYPE REF TO CL_GUI_CONTAINER |Internal, Do not Use
+|I_APPLOGPARENT |TYPE REF TO CL_GUI_CONTAINER |Container for Application Log
+|I_GRAPHICSPARENT |TYPE REF TO CL_GUI_CONTAINER |Container for Graphics
+|I_NAME |TYPE STRING |Name
+|I_FCAT_COMPLETE |TYPE SAP_BOOL |Boolean Variable (X=True, Space=False)
+|========
+
+
+== FCODE_BOUNCER Internal, Temporary, Do not Use! 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|========
+
+
+== GET_ACTUAL_VIEW Returns the Current View 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|E_VIEW |TYPE UI_FUNC |Current View
+|========
+
+
+== GET_BACKEND_FIELDCATALOG INTERNAL USE ONLY 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ET_FIELDCATALOG |TYPE LVC_T_FCAT |Backend Field Catalog
+|========
+
+
+== GET_CURRENT_CELL Current Row 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|E_ROW |TYPE I |Row on Grid
+|E_VALUE |TYPE C |Value
+|E_COL |TYPE I |Column on Grid
+|ES_ROW_ID |TYPE LVC_S_ROW |Row ID
+|ES_COL_ID |TYPE LVC_S_COL |Column ID
+|ES_ROW_NO |TYPE LVC_S_ROID |Numeric Row ID
+|========
+
+
+== GET_FILTERED_ENTRIES Hashed Table of Filtered Entries 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ET_FILTERED_ENTRIES |TYPE LVC_T_FIDX |Hashed Table of Filtered Entries
+|========
+
+
+== GET_FILTER_CRITERIA Get Filter Criteria 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ET_FILTER |TYPE LVC_T_FILT |Filter Criteria
+|========
+
+
+== GET_FRONTEND_FIELDCATALOG Get Current Field Catalog from Frontend 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ET_FIELDCATALOG |TYPE LVC_T_FCAT |Field Catalog
+|========
+
+
+== GET_FRONTEND_LAYOUT Get Current Layout from Frontend 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ES_LAYOUT |TYPE LVC_S_LAYO |Layout
+|========
+
+
+== GET_FRONTEND_PRINT Get Current Print from Frontend 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ES_PRINT |TYPE LVC_S_PRNT |Print Settings for LVC
+|========
+
+
+== GET_SCROLL_INFO_VIA_ID Use ID to Get Scroll Information 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ES_ROW_NO |TYPE LVC_S_ROID |Numeric Row ID
+|ES_ROW_INFO |TYPE LVC_S_ROW |Row ID
+|ES_COL_INFO |TYPE LVC_S_COL |Column ID
+|========
+
+
+== GET_SEARCH_DATA Deliver Search State of Grid 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|R_SEARCH |TYPE REF TO IF_ALV_LVC_SEARCH |Interface for Search
+|========
+
+
+== GET_SELECTED_CELLS Get Selected Cells 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ET_CELL |TYPE LVC_T_CELL |Selected Cells
+|========
+
+
+== GET_SELECTED_CELLS_ID Get Selected Cell IDs 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ET_CELLS |TYPE LVC_T_CENO |Cell IDs
+|========
+
+
+== GET_SELECTED_COLUMNS Get Selected Columns 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ET_INDEX_COLUMNS |TYPE LVC_T_COL |Indexes of Selected Rows
+|========
+
+
+== GET_SELECTED_ROWS Get Selected Rows 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ET_INDEX_ROWS |TYPE LVC_T_ROW |Indexes of Selected Rows
+|ET_ROW_NO |TYPE LVC_T_ROID |Numeric IDs of Selected Rows
+|========
+
+
+== GET_SORT_CRITERIA Get Sort Criteria 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ET_SORT |TYPE LVC_T_SORT |Sort Criteria
+|========
+
+
+== GET_SUBTOTALS Get Subtotals Table 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|EP_COLLECT00 |TYPE REF TO DATA |Overall Total
+|EP_COLLECT01 |TYPE REF TO DATA |Highest Subtotal Level
+|EP_COLLECT02 |TYPE REF TO DATA |Second Highest Subtotal Level
+|EP_COLLECT03 |TYPE REF TO DATA |Third Highest Subtotal Level
+|EP_COLLECT04 |TYPE REF TO DATA |Fourth Highest Subtotal Level
+|EP_COLLECT05 |TYPE REF TO DATA |Fifth Highest Subtotal Level
+|EP_COLLECT06 |TYPE REF TO DATA |Sixth Highest Subtotal Level
+|EP_COLLECT07 |TYPE REF TO DATA |Seventh Highest Subtotal Level
+|EP_COLLECT08 |TYPE REF TO DATA |Eighth Highest Subtotal Level
+|EP_COLLECT09 |TYPE REF TO DATA |Ninth Highest Subtotal Level
+|ET_GROUPLEVELS |TYPE LVC_T_GRPL |Control Level Table
+|========
+
+
+== GET_VARIANT Get Layout 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ES_VARIANT |TYPE DISVARIANT |Layout
+|E_SAVE |TYPE CHAR1 |Single-Character Flag
+|========
+
+
+== IS_READY_FOR_INPUT Check for Current Editibility 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|I_ROW_ID |TYPE INT4 |Line ID
+|IS_COL_ID |TYPE LVC_S_COL |Column
+|READY_FOR_INPUT |TYPE INT4 |Editable
+|========
+
+
+== LIST_PROCESSING_EVENTS Interface Method Classic ALV to ALV Control 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|I_EVENT_NAME |TYPE CHAR30 |Event Name List Processing
+|I_DYNDOC_ID |TYPE REF TO CL_DD_DOCUMENT |Dynamic Document
+|IS_SUBTOTTXT_INFO |TYPE LVC_S_STXT |Subtotal Text Information
+|IP_SUBTOT_LINE |TYPE REF TO DATA |Subtotal Line
+|I_TABLE_INDEX |TYPE SYINDEX |Loops, Current Loop Pass
+|C_SUBTOTTXT |TYPE LVC_DISTXT |Subtotal Text
+|========
+
+
+== PROCESS_UCOMM_ON_INVALID_INPUT Ucomms To Be Processed Even in Case of Invalid Input 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IT_UCOMMS |TYPE UI_FUNCTIONS |Function Code Table
+|========
+
+
+== RAISE_EVENT Raise 'USER_COMMAND' 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|I_UCOMM |TYPE SY-UCOMM |Screens, Function Code Triggered by PAI
+|I_USER_COMMAND |TYPE CHAR01 |
+|I_NOT_PROCESSED |TYPE CHAR01 |
+|========
+
+
+== REFRESH_TABLE_DISPLAY Redisplay Table 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IS_STABLE |TYPE LVC_S_STBL |With Stable Rows/Columns
+|I_SOFT_REFRESH |TYPE CHAR01 |Without Sort, Filter, etc.
+|========
+
+
+== REGISTER_DELAYED_EVENT Set Delayed Event (change_selection or moved_cell) 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|I_EVENT_ID |TYPE I |Event ID
+|========
+
+
+== REGISTER_EDIT_EVENT Register Edit Events 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|I_EVENT_ID |TYPE I |Event ID
+|========
+
+
+== REGISTER_F4_FOR_FIELDS Register F4 Handling for Fields 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IT_F4 |TYPE LVC_T_F4 |F4 Fields
+|========
+
+
+== SAVE_GRID_VARIANTS_SIMUL Save Grid Variants with Current 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IT_GRIDS |TYPE LVC_T_SAVE |Grid Variants to Save
+|========
+
+
+== SAVE_VARIANT Save Layout 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|I_DIALOG |TYPE CHAR01 |Character Field of Length 1
+|E_EXIT |TYPE CHAR01 |Activity Terminated
+|========
+
+
+== SAVE_VARIANT_DARK Save Variant in Background 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IS_VARIANT |TYPE DISVARIANT |Variant Information
+|I_ACTIVE |TYPE CHAR01 |Character Field of Length 1
+|========
+
+
+== SELECT_TEXT_IN_CURR_CELL Select Text 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|========
+
+
+== SET_3D_BORDER Sets 3D Frame 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|BORDER |TYPE I |Frame (1 = Yes, 0 = No)
+|========
+
+
+== SET_AUTOREDRAW Autoredraw 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|I_ENABLE |TYPE INT4 |Autoredraw
+|========
+
+
+== SET_CURRENT_CELL_VIA_ID Current Row 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IS_ROW_ID |TYPE LVC_S_ROW |Row
+|IS_COLUMN_ID |TYPE LVC_S_COL |Column
+|IS_ROW_NO |TYPE LVC_S_ROID |Numeric Row ID
+|========
+
+
+== SET_DELTA_CELLS For Internal Use Only!! 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IT_DELTA_CELLS |TYPE LVC_T_MODI |Delta Table
+|I_MODIFIED |TYPE CHAR01 |Modified
+|I_FRONTEND_ONLY |TYPE CHAR01 |Update only at Frontend
+|========
+
+
+== SET_DROP_DOWN_TABLE Set Dropdown Table 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IT_DROP_DOWN |TYPE LVC_T_DROP |Dropdown Table
+|IT_DROP_DOWN_ALIAS |TYPE LVC_T_DRAL |ALV Control: Dropdown List Boxes
+|========
+
+
+== SET_ERROR_LOG For Internal Use Only!! 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IR_ALV |TYPE REF TO CL_GUI_ALV_GRID |ALV Error
+|========
+
+
+== SET_FILTER_CRITERIA Set Filter Conditions 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IT_FILTER |TYPE LVC_T_FILT |Filter Conditions
+|========
+
+
+== SET_FRONTEND_FIELDCATALOG Set Field Catalog 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IT_FIELDCATALOG |TYPE LVC_T_FCAT |Field Catalog
+|========
+
+
+== SET_FRONTEND_LAYOUT Set Frontend Layout 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IS_LAYOUT |TYPE LVC_S_LAYO |Layout
+|========
+
+
+== SET_FRONTEND_PRINT Set Frontend Print 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IS_PRINT |TYPE LVC_S_PRNT |Print Settings for LVC
+|========
+
+
+== SET_FUNCTION_CODE Internal Use Only! 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|C_UCOMM |TYPE SY-UCOMM |Function Code
+|========
+
+
+== SET_GRAPHICS_CONTAINER Pass Graphic Container 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|I_GRAPHICS_CONTAINER |TYPE REF TO CL_GUI_CONTAINER |Graphic Container
+|========
+
+
+== SET_GRIDTITLE Pass Grid Title 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|I_GRIDTITLE |TYPE LVC_TITLE |ALV Control: Title bar text
+|========
+
+
+== SET_HEADER_TRANSPORT For Internal Use only! 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|I_HEADER_TRANSPORT |TYPE CHAR30 |30 Characters
+|========
+
+
+== SET_HTML_HEADER Excel Header Set 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|========
+
+
+== SET_LAYOUT_OF_DOUBLEGRID Configures the Double Grid for the Layout (DV) 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IS_DTC_LAYOUT |TYPE DTC_S_LAYO |Name of Column of Internal Table
+|========
+
+
+== SET_PRINT_DATA_CONTAINER Only for Internal Use 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|VALUE |TYPE REF TO IF_ALV_PRINT_PARAMETER_PROXY |Persistence Object for Print
+|========
+
+
+== SET_READY_FOR_INPUT Set/Reset Ready for Input Status 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|I_READY_FOR_INPUT |TYPE INT4 |Ready for Input Status
+|========
+
+
+== SET_SCROLL_INFO_VIA_ID Use ID to Set Scroll Information 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IS_ROW_INFO |TYPE LVC_S_ROW |Row ID
+|IS_COL_INFO |TYPE LVC_S_COL |Column ID
+|IS_ROW_NO |TYPE LVC_S_ROID |Numeric Row ID
+|========
+
+
+== SET_SELECTED_CELLS Set Cell Selections 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IT_CELLS |TYPE LVC_T_CELL |Cell Table
+|========
+
+
+== SET_SELECTED_CELLS_ID Set Cell Selections 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IT_CELLS |TYPE LVC_T_CENO |Cell IDs
+|========
+
+
+== SET_SELECTED_COLUMNS Set Column Selections 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IT_COL_TABLE |TYPE LVC_T_COL |Selected Columns
+|IS_KEEP_OTHER_SELECTIONS |TYPE CHAR01 |Character Field of Length 1
+|========
+
+
+== SET_SELECTED_ROWS Set Selected Rows 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IT_INDEX_ROWS |TYPE LVC_T_ROW |Indexes of Selected Rows
+|IT_ROW_NO |TYPE LVC_T_ROID |Numeric Row IDs
+|IS_KEEP_OTHER_SELECTIONS |TYPE CHAR01 |Character Field of Length 1
+|========
+
+
+== SET_SORT_CRITERIA Set Sort Criteria 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IT_SORT |TYPE LVC_T_SORT |Sort Criteria
+|========
+
+
+== SET_TABLE_FOR_FIRST_DISPLAY Formatted Output Table is Sent to Control 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|I_BUFFER_ACTIVE |TYPE ANY |Buffering Active
+|I_BYPASSING_BUFFER |TYPE CHAR01 |Switch Off Buffer
+|I_CONSISTENCY_CHECK |TYPE CHAR1 |Starting Consistency Check for Interface Error Recognition
+|I_STRUCTURE_NAME |TYPE DD02L-TABNAME |Internal Output Table Structure Name
+|IS_VARIANT |TYPE DISVARIANT |Layout
+|I_SAVE |TYPE CHAR01 |Save Layout
+|I_DEFAULT |TYPE CHAR01 |Default Display Variant
+|IS_LAYOUT |TYPE LVC_S_LAYO |Layout
+|IS_PRINT |TYPE LVC_S_PRNT |Print Control
+|IT_SPECIAL_GROUPS |TYPE LVC_T_SGRP |Field Groups
+|IT_TOOLBAR_EXCLUDING |TYPE UI_FUNCTIONS |Excluded Toolbar Standard Functions
+|IT_HYPERLINK |TYPE LVC_T_HYPE |Hyperlinks
+|IT_ALV_GRAPHICS |TYPE DTC_T_TC |Table of Structure DTC_S_TC
+|IT_EXCEPT_QINFO |TYPE LVC_T_QINF |Table for Exception Quickinfo
+|IR_SALV_ADAPTER |TYPE REF TO IF_SALV_ADAPTER |Interface ALV Adapter
+|IT_OUTTAB |TYPE STANDARD TABLE |Output Table
+|IT_FIELDCATALOG |TYPE LVC_T_FCAT |Field Catalog
+|IT_SORT |TYPE LVC_T_SORT |Sort Criteria
+|IT_FILTER |TYPE LVC_T_FILT |Filter Criteria
+|========
+
+
+== SET_TOOLBAR_INTERACTIVE Set Toolbar Status 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|========
+
+
+== SET_USER_COMMAND Set User Command 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|I_UCOMM |TYPE SY-UCOMM |User Command
+|========
+
+
+== SET_VARIANT Set Display Variant 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|IS_VARIANT |TYPE DISVARIANT |Layout (External Use)
+|I_SAVE |TYPE CHAR1 |Single-Character Flag
+|========
+
+
+== DRAG_ACCEPT_FILES Enable GridView to Accept Dragged Files (e.g. from Explorer) 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|B_ACCEPT |TYPE I |1 = Accept, 0 = Not Accept
+|========
+
+
+== GET_DROPPED_EXTERNAL_FILES Get Dropped Files 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|FILES |TYPE FILETABLE |File Name Table
+|ROW_ID |TYPE I |Row Number
+|COL_ID |TYPE I |Column number
+|========
+
+
+== IF_DRAGDROP~ONGETFLAVOR Returns Flavor of Data 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|FLAVORS |TYPE CNDD_FLAVORS |Possible Flavors
+|PROPERTIES |TYPE REF TO CL_SIMPLEPROPBAG |Properties
+|DRAGDROPOBJECT |TYPE REF TO CL_DRAGDROPOBJECT |Drag and Drop Object
+|========
+
+
+== IF_DRAGDROP~ONDRAG Call Drag Source 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|PROPERTIES |TYPE REF TO CL_SIMPLEPROPBAG |Parameter of Drag and Drop
+|DRAGDROPOBJECT |TYPE REF TO CL_DRAGDROPOBJECT |Drag and Drop Data Object
+|========
+
+
+== IF_DRAGDROP~ONDROP Call Drop Target 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|PROPERTIES |TYPE REF TO CL_SIMPLEPROPBAG |Properties
+|DRAGDROPOBJECT |TYPE REF TO CL_DRAGDROPOBJECT |Drag and Drop Data Object
+|========
+
+
+== IF_DRAGDROP~ONDROPCOMPLETE Call Drag Source Once Drop Completed Successfully 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|PROPERTIES |TYPE REF TO CL_SIMPLEPROPBAG |Properties
+|DRAGDROPOBJECT |TYPE REF TO CL_DRAGDROPOBJECT |Data Object
+|========
+
+
+== IS_VALID Check If a GUI_OBJECT Represents a Valid Frontend Object 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|RESULT |TYPE I |0: Not Valid; 1: Valid
+|========
+
+
+== FREE Destructor 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|========
+
+
+== GET_FOCUS GET_FOCUS     *** THIS WILL FLUSH *** 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|CONTROL |TYPE REF TO CL_GUI_CONTROL |Control
+|========
+
+
+== SET_FOCUS SET_FOCUS 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|CONTROL |TYPE REF TO CL_GUI_CONTROL |Control
+|========
+
+
+== SET_NAME Sets the Name 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|NAME |TYPE STRING |Name
+|========
+
+
+== GET_NAME Returns the Name 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|NAME |TYPE STRING |Name
+|========
+
+
+== GET_ENABLE Get enable/disable property 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ENABLE |TYPE C |Enable/disable state flag
+|========
+
+
+== SET_ENABLE Set enable/disable property 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ENABLE |TYPE C |Enable/disable state flag
+|========
+
+
+== DISPATCH Dispatch, MUST be Redefined 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|CARGO |TYPE SYUCOMM |Cargo
+|EVENTID |TYPE I |Event ID
+|IS_SHELLEVENT |TYPE CHAR1 |Shell Event
+|IS_SYSTEMDISPATCH |TYPE CHAR1 |System event
+|========
+
+
+== FINALIZE Finalize, Can be Redefined 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|========
+
+
+== GET_ADJUST_DESIGN Get Current Adjust Design Status 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ADJUST_DESIGN |TYPE I |Current Adjust Design Status
+|========
+
+
+== GET_GRID_HANDLE Get Current Grid Handle 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|GRID_HANDLE |TYPE I |Get Current Grid Handle
+|========
+
+
+== GET_GRID_STEP Get Current Grid Step Value 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|GRID_STEP |TYPE I |Current Grid Step Value
+|========
+
+
+== GET_HEIGHT Get Height of Control 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|HEIGHT |TYPE I |Current Height
+|========
+
+
+== GET_LEFT Get Left Coordinate Value of Control 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|LEFT |TYPE I |Current Left Coordinate of Control
+|========
+
+
+== GET_METRIC Get Currently-Used Metric 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|METRIC |TYPE I |Currently-Used Metric
+|========
+
+
+== GET_MODE Is Control in Design Mode or Run Mode 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|MODE |TYPE I |Design/Run Mode Flag
+|========
+
+
+== GET_REGISTERED_EVENTS GET_REGISTERED_EVENTS     (Int / System) 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|EVENTS |TYPE CNTL_SIMPLE_EVENTS |simple_events
+|========
+
+
+== GET_TOP Get Top Coordinate Value of Control 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|TOP |TYPE I |Current Top Coordinate of Control
+|========
+
+
+== GET_VISIBLE Is Control Visible 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|VISIBLE |TYPE C |Visible/Invisible State Flag
+|========
+
+
+== GET_WIDTH Get Width of Control 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|WIDTH |TYPE I |Current Width
+|========
+
+
+== IS_ALIVE Life State in Current Situation 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|STATE |TYPE I |Life Status
+|========
+
+
+== REG_EVENT_LEFT_CLICK_DESIGN Register/Deregister Left Button Click Event in Design Mode 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|REGISTER |TYPE I |True = Register, False = Deregister
+|========
+
+
+== REG_EVENT_LEFT_CLICK_RUN_MODE Register/Deregister Left Button Click Event in Run Mode 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|REGISTER |TYPE I |True = Register, False = Deregister
+|========
+
+
+== REG_EVENT_MOVE_CONTROL Register/Deregister Move Control Event 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|REGISTER |TYPE I |True = Register, False = Deregister
+|========
+
+
+== REG_EVENT_RIGHT_CLICK Register/Unregister Right Button Click Event 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|REGISTER |TYPE I |True = Register, False = Deregister
+|========
+
+
+== REG_EVENT_SIZE_CONTROL Register/Unregister Size Control Event 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|REGISTER |TYPE I |True = Register, False = Deregister
+|========
+
+
+== SET_ADJUST_DESIGN Toggle Between Adjust Design and Do Not Adjust Design 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ADJUST_DESIGN |TYPE I |Do/Don't Adjust Design
+|========
+
+
+== SET_ALIGNMENT SET_ALIGNMENT 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ALIGNMENT |TYPE I |Alignment
+|========
+
+
+== SET_GRID_HANDLE Set Current Grid Handle 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|GRID_HANDLE |TYPE I |Set Current Grid Handle
+|========
+
+
+== SET_GRID_STEP Set Current Grid Step Value 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|GRID_STEP |TYPE I |Set Current Grid Step Value
+|========
+
+
+== SET_HEIGHT Set Height of Control 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|HEIGHT |TYPE I |Current Height of Control
+|========
+
+
+== SET_LEFT Set Left Coordinate Value of Control 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|LEFT |TYPE I |Current Left Coordinate of Control
+|========
+
+
+== SET_METRIC Select Metric 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|METRIC |TYPE I |Metric
+|========
+
+
+== SET_MODE Toggle Control Between Design Mode and Run Mode 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|MODE |TYPE I |Design/Run Mode Flag
+|========
+
+
+== SET_POSITION SET_POSITION 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|HEIGHT |TYPE I |HEIGHT
+|LEFT |TYPE I |Left
+|TOP |TYPE I |TOP
+|WIDTH |TYPE I |WIDTH
+|========
+
+
+== SET_REGISTERED_EVENTS SET_REGISTERED_EVENTS     (Int / System) 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|EVENTS |TYPE CNTL_SIMPLE_EVENTS |Event Table
+|========
+
+
+== SET_TOP Set Top Coordinate Value of Control 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|TOP |TYPE I |Current Top Coordinate of Control
+|========
+
+
+== SET_VISIBLE Set Control Visible or Invisible 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|VISIBLE |TYPE C |Visible
+|========
+
+
+== SET_WIDTH Set Width of Control 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|WIDTH |TYPE I |Current Width of Control
+|========
+
+
+== GET_PATH Returns the Complete Name abc/def/uvw 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|PATH |TYPE STRING |Complete Name abc/def/ghi
+|========
+
+
+== GET_ACCDESCRIPTION Get accessibility description property 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ACCDESCRIPTION |TYPE STRING |Accessibility Description
+|========
+
+
+== SET_ACCDESCRIPTION Set accessibility description property 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|ACCDESCRIPTION |TYPE STRING |Accessibility Description
+|========
+
+
+== IF_CACHED_PROP~GET_NEXT_PROP Read Next Property 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|PROPNAME |TYPE STRING |Name of Property
+|PROPVALUE |TYPE STRING |Value of Property
+|========
+
+
+== IF_CACHED_PROP~SEEK_FIRST_PROP Set Cursor to 1st Property 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|========
+
+
+== IF_CACHED_PROP~SET_PROP Set a Property 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|PROPNAME |TYPE STRING |Name of Property
+|PROPVALUE |TYPE STRING |Value of Property
+|========
+
+
+== IF_GUI_DYNAMIC_DATA~ON_EXECUTE_NODE End of a Node 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|NAME |TYPE STRING |Node Name
+|========
+
+
+== IF_GUI_DYNAMIC_DATA~ON_NEW_NODE New Data for Control Proxy 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|NAME |TYPE STRING |Root Node of Data
+|RETVAL |TYPE REF TO IF_GUI_DYNAMIC_DATA |New Consumer
+|========
+
+
+== IF_GUI_DYNAMIC_DATA~ON_VALUE Call Processing of new Value Pair 
+
+(Public Method) 
+
+Interface
+|========
+|*Name*|*Typing*|*Description*
+|NAME |TYPE STRING |Name of Value
+|VALUE |TYPE STRING |Value
+|========
+
+
