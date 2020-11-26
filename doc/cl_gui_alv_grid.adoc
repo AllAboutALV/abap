@@ -1,7 +1,15 @@
+:toc:
+
+:toc-placement!:
+
 = CL_GUI_ALV_GRID
  
 Output of Test Report ZAAA_TEST_ADOC_FOR_CLAS 
- 
+
+
+
+toc::[]
+
 == _GET_MASKING Masking, internal use only 
 
 (Public Method) 
