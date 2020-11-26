@@ -2,6 +2,8 @@
 
 :toc-placement!:
 
+:toclevels: 1
+
 ifdef::env-github[]
 :tip-caption: :bulb:
 :note-caption: :information_source:
